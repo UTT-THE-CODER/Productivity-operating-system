@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Link } from "react-router-dom";
 function Navbar() {
     return (
             <nav className="flex items-center justify-between px-16 py-6 border-b border-[#5BC0BE]/20 bg-[#0F172A]/80 backdrop-blur-md shadow-lg shadow-[#5BC0BE]/5">
@@ -11,10 +11,12 @@ function Navbar() {
                             Priority
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5BC0BE] group-hover:w-full transition-all duration-300"></span>
                         </li>
-                        <li className="hover:text-[#5BC0BE] transition duration-300 cursor-pointer relative group">
+                        <Link
+                            to = "/Pomodoro"
+                            className="hover:text-[#5BC0BE] transition duration-300 cursor-pointer relative group">
                             Pomodoro
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5BC0BE] group-hover:w-full transition-all duration-300"></span>
-                        </li>
+                        </Link>
                         <li className="hover:text-[#5BC0BE] transition duration-300 cursor-pointer relative group">
                             Study With Me
                             <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5BC0BE] group-hover:w-full transition-all duration-300"></span>
