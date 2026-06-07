@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import Navbar from "../component/Navbar";
 function Pomodoro() {
     const [timeLeft, setTimeLeft] = useState(1500);
     const [isRunning, setIsRunning] = useState(false);
@@ -73,6 +74,7 @@ function Pomodoro() {
 
     }, []);
     return (
+    <>   
         <div className="min-h-screen bg-[#0F172A] text-[#E5E7EB] flex flex-col items-center pt-20">
             <h1 className="text-5xl font bold text-[#5BC0BE] mb-12">
                 Pomodoro Timer
@@ -200,6 +202,7 @@ function Pomodoro() {
                 </button>
             </div>
         </div>
+    </> 
     );
 }
 
