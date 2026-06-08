@@ -47,9 +47,9 @@ function TodoPreview() {
     }
 
     return (
-        <div className="w-[60%] mt-10 bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-[#5BC0BE]/20 rounded-2xl p-8 shadow-xl shadow-[#5BC0BE]/10 hover:shadow-[#5BC0BE]/20 transition duration-500">
-            <div className="flex items-center justify-between mb-8">
-                <h2 className="text-4xl font-bold text-[#5BC0BE]">
+        <div className="w-full md:w-[60%] mt-10 bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-[#5BC0BE]/20 rounded-2xl p-4 md:p-8 shadow-xl shadow-[#5BC0BE]/10 hover:shadow-[#5BC0BE]/20 transition duration-500">
+            <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                <h2 className="text-2xl md:text-4xl font-bold text-[#5BC0BE]">
                     Today's Tasks
                 </h2>
                 <p className="text-[#94A3B8]">
@@ -59,14 +59,14 @@ function TodoPreview() {
 
                     <Link
                         to="/todo"
-                        className="px-6 py-3 border border-[#5BC0BE] text-[#5BC0BE] rounded-lg font-semibold hover:bg-[#5BC0BE] hover:text-[#0F172A] transition duration-300"
+                        className="px-4 md:px-6 py-2 md:py-3 border border-[#5BC0BE] text-[#5BC0BE] rounded-lg font-semibold hover:bg-[#5BC0BE] hover:text-[#0F172A] transition duration-300"
                     >
                         See More
                     </Link>
 
                     <button
                         onClick={() => setIsOpen(true)}
-                        className="px-6 py-3 bg-[#5BC0BE] text-[#0F172A] rounded-lg font-bold hover:shadow-lg hover:shadow-[#5BC0BE]/40 hover:scale-105 transition duration-300"
+                        className="px-4 md:px-6 py-2 md:py-3 bg-[#5BC0BE] text-[#0F172A] rounded-lg font-bold hover:shadow-lg hover:shadow-[#5BC0BE]/40 hover:scale-105 transition duration-300"
                     >
                         + Add Task
                     </button>
@@ -79,7 +79,7 @@ function TodoPreview() {
 
                     <div
                         key={tasks.id}
-                        className="flex items-center justify-between bg-[#1E293B] px-6 py-5 rounded-2xl hover:bg-slate-700 transition duration-300"
+                        className="flex flex-col md:flex-row md:items-center justify-between gap-3 bg-[#1E293B] px-6 py-5 rounded-2xl hover:bg-slate-700 transition duration-300"
                     >
 
                         <div className="flex items-center gap-5">
@@ -93,7 +93,7 @@ function TodoPreview() {
                             />
 
                             <p
-                                className={`text-xl ${tasks.completed
+                                className={`text-base md:text-xl ${tasks.completed
                                     ? "line-through text-[#94A3B8]"
                                     : "text-[#E5E7EB]"
                                     }`}
