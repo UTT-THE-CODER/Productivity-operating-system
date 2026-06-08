@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import Navbar from "../component/Navbar";
+import Navbar from "../Component/Navbar";
 function Pomodoro() {
     const [timeLeft, setTimeLeft] = useState(1500);
     const [isRunning, setIsRunning] = useState(false);
