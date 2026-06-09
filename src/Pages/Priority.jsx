@@ -99,15 +99,15 @@ function Priority() {
     };
     return (
         <>
-            <div className="min-h-screen bg-[#0F172A] text-[#E5E7EB] p-4 md:p-10">
-                <h1 className="text-3xl md:text-5xl font-bold text-[#5BC0BE] mb-8">
+            <div className="min-h-screen bg-[#0F172A] text-[#E5E7EB] p-3 sm:p-4 md:p-10">
+                <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#5BC0BE] mb-6 sm:mb-8">
                     Priority Matrix
                 </h1>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div className="bg-[#1E293B] rounded-2xl p-6 border border-red-400/20 min-h-[250px]">
-                        <div className="flex items-center justify-between mb-3">
-                            <h2 className="text-2xl font-bold text-red-400 mb-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+                    <div className="bg-[#1E293B] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-red-400/20 min-h-[200px] sm:min-h-[250px]">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:mb-3">
+                            <h2 className="text-lg sm:text-2xl font-bold text-red-400">
                                 Do First
                             </h2>
                             <button
@@ -115,15 +115,15 @@ function Priority() {
                                     setSelectedQuadrant("doFirst");
                                     setIsOpen(true);
                                 }}
-                                className="px-3 py-1 text-sm bg-red-400/20 text-red-400 rounded-lg hover:bg-red-400/30 transition">
+                                className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-red-400/20 text-red-400 rounded-lg hover:bg-red-400/30 transition w-fit">
                                 +Add
                             </button>
                         </div>
-                        <div className="mt-4 space-y-2">
+                        <div className="mt-3 sm:mt-4 space-y-2">
                             {doFirstTasks.map((task) => (
                                 <div
                                     key={task.id}
-                                    className="bg-[#0F172A] p-3 rounded-lg flex justify-between items-center"
+                                    className="bg-[#0F172A] p-2 sm:p-3 rounded-lg flex justify-between items-center text-sm sm:text-base"
                                 >
                                     <span>{task.text}</span>
 
@@ -139,9 +139,9 @@ function Priority() {
                             ))}
                         </div>
                     </div>
-                    <div className="bg-[#1E293B] rounded-2xl p-6 border border-yellow-400/20 min-h-[250px]">
-                        <div className="flex items-center justify-between mb-3">
-                            <h2 className=" text-2xl font-bold text-yellow-400 mb-3">
+                    <div className="bg-[#1E293B] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-yellow-400/20 min-h-[200px] sm:min-h-[250px]">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:mb-3">
+                            <h2 className="text-lg sm:text-2xl font-bold text-yellow-400">
                                 Schedule
                             </h2>
                             <button
@@ -149,15 +149,15 @@ function Priority() {
                                     setSelectedQuadrant("schedule");
                                     setIsOpen(true);
                                 }}
-                                className="px-3 py-1 text-sm bg-yellow-400/20 text-yellow-400 rounded-lg hover:bg-yellow-400/30 transition">
+                                className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-yellow-400/20 text-yellow-400 rounded-lg hover:bg-yellow-400/30 transition w-fit">
                                 +Add
                             </button>
                         </div>
-                        <div className="mt-4 space-y-2">
+                        <div className="mt-3 sm:mt-4 space-y-2">
                             {scheduleTasks.map((task) => (
                                 <div
                                     key={task.id}
-                                    className="bg-[#0F172A] p-3 rounded-lg flex justify-between items-center"
+                                    className="bg-[#0F172A] p-2 sm:p-3 rounded-lg flex justify-between items-center text-sm sm:text-base"
                                 >
                                     <span>{task.text}</span>
 
@@ -173,9 +173,9 @@ function Priority() {
                             ))}
                         </div>
                     </div>
-                    <div className="bg-[#1E293B] rounded-2xl p-6 border border-blue-400/20 min-h-[250px]">
-                        <div className="flex items-center justify-between mb-3">
-                            <h2 className="text-2xl font-bold text-blue-400  mb-3">
+                    <div className="bg-[#1E293B] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-400/20 min-h-[200px] sm:min-h-[250px]">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:mb-3">
+                            <h2 className="text-lg sm:text-2xl font-bold text-blue-400">
                                 Delegate
                             </h2>
                             <button
@@ -183,15 +183,15 @@ function Priority() {
                                     setSelectedQuadrant("delegate");
                                     setIsOpen(true);
                                 }}
-                                className="px-3 py-1 text-sm bg-blue-400/20 text-blue-400 rounded-lg hover:bg-blue-400/30 transition">
+                                className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-400/20 text-blue-400 rounded-lg hover:bg-blue-400/30 transition w-fit">
                                 +Add
                             </button>
                         </div>
-                        <div className="mt-4 space-y-2">
+                        <div className="mt-3 sm:mt-4 space-y-2">
                             {delegateTasks.map((task) => (
                                 <div
                                     key={task.id}
-                                    className="bg-[#0F172A] p-3 rounded-lg flex justify-between items-center"
+                                    className="bg-[#0F172A] p-2 sm:p-3 rounded-lg flex justify-between items-center text-sm sm:text-base"
                                 >
                                     <span>{task.text}</span>
 
