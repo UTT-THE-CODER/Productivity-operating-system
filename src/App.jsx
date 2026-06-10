@@ -5,6 +5,7 @@ import TodoPage from "./Pages/TodoPage";
 import Pomodoro from "./Pages/Pomodoro";
 import Navbar from "./Component/Navbar";
 import Priority from "./Pages/Priority";
+import StudyWithMe from "./Pages/StudyWithMe";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/todo" element={<TodoPage />} />
         <Route path="/Pomodoro" element={<Pomodoro />} />
         <Route path="/Priority" element={<Priority />}/>
+        <Route path ="/StudyWithMe" element={<StudyWithMe />}/>
       </Routes>
 
     </BrowserRouter>

@@ -26,10 +26,12 @@ function Navbar() {
                     Pomodoro
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5BC0BE] group-hover:w-full transition-all duration-300"></span>
                 </Link>
-                <li className="hover:text-[#5BC0BE] transition duration-300 cursor-pointer relative group">
+                <Link 
+                    to ="/StudyWithMe"
+                    className="hover:text-[#5BC0BE] transition duration-300 cursor-pointer relative group">
                     Study With Me
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5BC0BE] group-hover:w-full transition-all duration-300"></span>
-                </li>
+                </Link>
                 <li className="hover:text-[#5BC0BE] transition duration-300 cursor-pointer relative group">
                     Team Todo
                     <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-[#5BC0BE] group-hover:w-full transition-all duration-300"></span>
