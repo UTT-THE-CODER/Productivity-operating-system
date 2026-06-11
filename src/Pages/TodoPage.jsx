@@ -49,8 +49,8 @@ function TodoPage() {
     })
 
     return (
-        <div className="min-h-screen bg-[#0F172A] text-[#E5E7EB] p-4 sm:p-6 md:p-10">
-            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#5BC0BE]">
+        <div className="min-h-screen bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] text-[#E5E7EB] p-4 sm:p-6 md:p-10 pb-12">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] bg-clip-text text-transparent mb-8 md:mb-10">
                 Todo Page
             </h1>
             <div className="mt-6 sm:mt-8">
@@ -59,45 +59,45 @@ function TodoPage() {
                     placeholder="Search tasks..."
                     value={searchTerm}
                     onChange={(e) => setSearchTerm(e.target.value)}
-                    className="w-full bg-[#1E293B] border border-[#5BC0BE]/20 rounded-xl px-4 sm:px-5 py-3 sm:py-4 text-[#E5E7EB] outline-none focus:border-[#5BC0BE]"
+                    className="w-full bg-[#1E293B] border-2 border-[#5BC0BE]/30 rounded-lg px-5 sm:px-6 py-3 sm:py-4 text-[#E5E7EB] placeholder-[#5BC0BE]/40 outline-none focus:border-[#5BC0BE] focus:shadow-lg focus:shadow-[#5BC0BE]/20 transition duration-300 font-medium"
                 />
             </div>
-            <div className="flex flex-wrap gap-2 sm:gap-4 mt-6">
+            <div className="flex flex-wrap gap-3 sm:gap-4 mt-6">
                 <button
                     onClick={() => setFilter("all")}
-                    className={`px-3 sm:px-5 py-2 text-sm sm:text-base rounded-lg ${filter === "all"
-                            ? "bg-[#5BC0BE] text-[#0F172A]"
-                            : "border border-[#5BC0BE] text-[#5BC0BE]"
+                    className={`px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-semibold transition duration-300 ${filter === "all"
+                            ? "bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] text-[#0F172A] shadow-lg shadow-[#5BC0BE]/40"
+                            : "border-2 border-[#5BC0BE]/50 text-[#5BC0BE] hover:border-[#5BC0BE] hover:bg-[#5BC0BE]/10"
                         }`}>
                     All
                 </button>
                 <button
                     onClick={() => setFilter("pending")}
-                    className={`px-3 sm:px-5 py-2 text-sm sm:text-base rounded-lg ${filter === "pending"
-                            ? "bg-[#5BC0BE] text-[#0F172A]"
-                            : "border border-[#5BC0BE] text-[#5BC0BE]"
+                    className={`px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-semibold transition duration-300 ${filter === "pending"
+                            ? "bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] text-[#0F172A] shadow-lg shadow-[#5BC0BE]/40"
+                            : "border-2 border-[#5BC0BE]/50 text-[#5BC0BE] hover:border-[#5BC0BE] hover:bg-[#5BC0BE]/10"
                         }`}>
                     Pending
                 </button>
                 <button
                     onClick={() => setFilter("completed")}
-                    className={`px-3 sm:px-5 py-2 text-sm sm:text-base rounded-lg ${filter === "completed"
-                            ? "bg-[#5BC0BE] text-[#0F172A]"
-                            : "border border-[#5BC0BE] text-[#5BC0BE]"
+                    className={`px-4 sm:px-6 py-2.5 sm:py-3 text-sm sm:text-base rounded-lg font-semibold transition duration-300 ${filter === "completed"
+                            ? "bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] text-[#0F172A] shadow-lg shadow-[#5BC0BE]/40"
+                            : "border-2 border-[#5BC0BE]/50 text-[#5BC0BE] hover:border-[#5BC0BE] hover:bg-[#5BC0BE]/10"
                         }`}>
                     Completed
                 </button>
             </div>
-            <div className="mt-6 sm:mt-8 bg-[#1E293B] rounded-2xl p-4 sm:p-6">
-                <h2 className="text-xl sm:text-2xl font-bold text-[#5BC0BE] mb-5">
+            <div className="mt-8 sm:mt-10 bg-[#1E293B]/40 rounded-2xl p-4 sm:p-6">
+                <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] bg-clip-text text-transparent mb-6">
                     All Tasks
                 </h2>
             </div>
             <div className="space-y-3 sm:space-y-4 mt-6">
 
                 {filteredTasks.length === 0 && (
-                    <div className="text-center py-8 sm:py-10">
-                        <p className="text-base sm:text-xl text-[#94A3B8]">
+                    <div className="text-center py-12 sm:py-16">
+                        <p className="text-lg sm:text-2xl text-[#5BC0BE]/60">
                             No tasks found 🚀
                         </p>
                     </div>
@@ -106,7 +106,7 @@ function TodoPage() {
                 {filteredTasks.map((task) => (
                     <div
                         key={task.id}
-                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 bg-[#1E293B] px-4 sm:px-6 py-4 sm:py-5 rounded-xl"
+                        className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4 bg-[#1E293B]/60 hover:bg-[#1E293B]/80 px-4 sm:px-6 py-4 sm:py-5 rounded-lg sm:rounded-xl border border-[#5BC0BE]/10 hover:border-[#5BC0BE]/30 transition duration-300"
                     >
                         <div className="flex items-center gap-3 sm:gap-4">
                             <input
@@ -114,26 +114,26 @@ function TodoPage() {
                                 checked={task.completed}
                                 onChange={() => toggleTask(task.id)
                                 }
-                                className="w-5 h-5 accent-[#5BC0BE]"
+                                className="w-5 h-5 accent-[#5BC0BE] cursor-pointer"
                             />
                             <p
-                                className={`text-sm sm:text-base md:text-lg ${task.completed
-                                    ? "line-through text-[#94A3B8]"
+                                className={`text-sm sm:text-base md:text-lg font-medium ${task.completed
+                                    ? "line-through text-[#5BC0BE]/50"
                                     : "text-[#E5E7EB]"
                                     }`}
                             >
                                 {task.text}
                             </p>
                         </div>
-                        <div className="flex items-center gap-2 sm:gap-4">
+                        <div className="flex items-center gap-3 sm:gap-4">
 
-                            <span className="text-xs sm:text-sm text-[#94A3B8]">
+                            <span className="text-xs sm:text-sm text-[#5BC0BE]/70 font-medium whitespace-nowrap">
                                 {task.time}
                             </span>
 
                             <button
                                 onClick={() => deleteTask(task.id)}
-                                className="text-red-400 hover:text-red-500 transition"
+                                className="text-red-400/70 hover:text-red-400 transition duration-300"
                             >
                                 <Trash2 size={18} />
                             </button>

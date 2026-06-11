@@ -47,41 +47,41 @@ function TodoPreview() {
     }
 
     return (
-        <div className="w-full max-w-2xl mx-auto mt-6 sm:mt-8 md:mt-10 bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-[#5BC0BE]/20 rounded-xl sm:rounded-2xl p-4 sm:p-6 md:p-8 shadow-xl shadow-[#5BC0BE]/10 hover:shadow-[#5BC0BE]/20 transition duration-500">
-            <div className="flex flex-col gap-4 mb-6 sm:mb-8">
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-                    <h2 className="text-xl sm:text-2xl md:text-4xl font-bold text-[#5BC0BE]">
+        <div className="w-full max-w-2xl mx-auto mt-8 sm:mt-10 md:mt-12 bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-[#5BC0BE]/30 rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-2xl shadow-[#5BC0BE]/20 hover:shadow-[#5BC0BE]/30 hover:border-[#5BC0BE]/50 transition duration-500">
+            <div className="flex flex-col gap-6 mb-8 sm:mb-10">
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] bg-clip-text text-transparent">
                         Today's Tasks
                     </h2>
-                    <p className="text-xs sm:text-sm text-[#94A3B8]">
+                    <p className="text-xs sm:text-sm text-[#5BC0BE] font-semibold">
                         {tasks.filter(task => !task.completed).length} tasks remaining
                     </p>
                 </div>
-                <div className="flex gap-2 sm:gap-3">
+                <div className="flex gap-3 sm:gap-4 flex-wrap">
 
                     <Link
                         to="/todo"
-                        className="px-3 sm:px-4 md:px-6 py-2 md:py-3 text-xs sm:text-sm border border-[#5BC0BE] text-[#5BC0BE] rounded-lg font-semibold hover:bg-[#5BC0BE] hover:text-[#0F172A] transition duration-300 whitespace-nowrap"
+                        className="px-4 sm:px-6 md:px-8 py-2.5 md:py-3 text-xs sm:text-sm font-semibold border-2 border-[#5BC0BE] text-[#5BC0BE] rounded-lg hover:bg-[#5BC0BE]/10 hover:border-[#06B6D4] transition duration-300 whitespace-nowrap"
                     >
                         See More
                     </Link>
 
                     <button
                         onClick={() => setIsOpen(true)}
-                        className="px-3 sm:px-4 md:px-6 py-2 md:py-3 text-xs sm:text-sm bg-[#5BC0BE] text-[#0F172A] rounded-lg font-bold hover:shadow-lg hover:shadow-[#5BC0BE]/40 hover:scale-105 transition duration-300 whitespace-nowrap"
+                        className="px-4 sm:px-6 md:px-8 py-2.5 md:py-3 text-xs sm:text-sm font-semibold bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] text-[#0F172A] rounded-lg shadow-lg shadow-[#5BC0BE]/30 hover:shadow-xl hover:shadow-[#5BC0BE]/50 hover:scale-105 transition duration-300 whitespace-nowrap"
                     >
                         + Add Task
                     </button>
 
                 </div>
             </div>
-            <div className="space-y-5">
+            <div className="space-y-3 sm:space-y-4">
 
                 {tasks.map((tasks) => (
 
                     <div
                         key={tasks.id}
-                        className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 sm:gap-3 bg-[#1E293B] px-3 sm:px-4 md:px-6 py-3 sm:py-4 md:py-5 rounded-lg sm:rounded-2xl hover:bg-slate-700 transition duration-300"
+                        className="flex flex-col sm:flex-row sm:items-center justify-between gap-3 sm:gap-4 bg-[#1E293B]/60 hover:bg-[#1E293B]/80 px-4 sm:px-6 md:px-7 py-4 sm:py-5 md:py-6 rounded-xl sm:rounded-2xl border border-[#5BC0BE]/10 hover:border-[#5BC0BE]/30 transition duration-300"
                     >
 
                         <div className="flex items-center gap-3 sm:gap-4 md:gap-5">
@@ -91,12 +91,12 @@ function TodoPreview() {
                                 checked={tasks.completed}
                                 onChange={() => toggleTask(tasks.id)}
                                 readOnly
-                                className="w-5 h-5 accent-[#5BC0BE] flex-shrink-0"
+                                className="w-5 h-5 accent-[#5BC0BE] cursor-pointer flex-shrink-0"
                             />
 
                             <p
-                                className={`text-xs sm:text-sm md:text-base lg:text-xl ${tasks.completed
-                                    ? "line-through text-[#94A3B8]"
+                                className={`text-xs sm:text-sm md:text-base lg:text-lg font-medium ${tasks.completed
+                                    ? "line-through text-[#5BC0BE]/50"
                                     : "text-[#E5E7EB]"
                                     }`}
                             >
@@ -105,17 +105,17 @@ function TodoPreview() {
 
                         </div>
 
-                        <div className="flex items-center gap-2 sm:gap-3 md:gap-4 ml-8 sm:ml-0">
+                        <div className="flex items-center gap-3 sm:gap-4 md:gap-5 ml-8 sm:ml-0">
 
-                            <span className="text-xs sm:text-sm text-[#94A3B8]">
+                            <span className="text-xs sm:text-sm text-[#5BC0BE]/70 font-medium whitespace-nowrap">
                                 {tasks.time}
                             </span>
 
                             <button
                                 onClick={() => deleteTask(tasks.id)}
-                                className="text-red-400 hover:text-red-300 transition duration-300 flex-shrink-0"
+                                className="text-red-400/70 hover:text-red-400 transition duration-300 flex-shrink-0 text-lg"
                             >
-                                🗑️
+                                ✕
                             </button>
 
                         </div>

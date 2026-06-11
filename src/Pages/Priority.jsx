@@ -99,15 +99,15 @@ function Priority() {
     };
     return (
         <>
-            <div className="min-h-screen bg-[#0F172A] text-[#E5E7EB] p-3 sm:p-4 md:p-10">
-                <h1 className="text-2xl sm:text-3xl md:text-5xl font-bold text-[#5BC0BE] mb-6 sm:mb-8">
+            <div className="min-h-screen bg-gradient-to-br from-[#0F172A] via-[#1E293B] to-[#0F172A] text-[#E5E7EB] p-4 sm:p-6 md:p-10 pb-12">
+                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] bg-clip-text text-transparent mb-8 md:mb-12">
                     Priority Matrix
                 </h1>
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
-                    <div className="bg-[#1E293B] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-red-400/20 min-h-[200px] sm:min-h-[250px]">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:mb-3">
-                            <h2 className="text-lg sm:text-2xl font-bold text-red-400">
+                    <div className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] rounded-2xl p-6 sm:p-7 border-2 border-red-400/40 min-h-[250px] hover:border-red-400/60 transition duration-300 shadow-lg shadow-red-400/10">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:mb-4">
+                            <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-red-400 to-red-300 bg-clip-text text-transparent">
                                 Do First
                             </h2>
                             <button
@@ -115,33 +115,33 @@ function Priority() {
                                     setSelectedQuadrant("doFirst");
                                     setIsOpen(true);
                                 }}
-                                className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-red-400/20 text-red-400 rounded-lg hover:bg-red-400/30 transition w-fit">
-                                +Add
+                                className="px-3 sm:px-4 py-1.5 text-xs sm:text-sm bg-red-400/20 text-red-400 rounded-lg hover:bg-red-400/30 transition font-semibold w-fit">
+                                + Add
                             </button>
                         </div>
-                        <div className="mt-3 sm:mt-4 space-y-2">
+                        <div className="mt-4 sm:mt-6 space-y-2">
                             {doFirstTasks.map((task) => (
                                 <div
                                     key={task.id}
-                                    className="bg-[#0F172A] p-2 sm:p-3 rounded-lg flex justify-between items-center text-sm sm:text-base"
+                                    className="bg-[#0F172A] p-3 sm:p-4 rounded-lg flex justify-between items-center text-sm sm:text-base border border-red-400/20 hover:border-red-400/40 transition duration-200 group"
                                 >
-                                    <span>{task.text}</span>
+                                    <span className="text-[#E5E7EB] group-hover:text-red-300 transition">{task.text}</span>
 
                                     <button
                                         onClick={() =>
                                             deleteTask("doFirst", task.id)
                                         }
-                                        className="text-red-400"
+                                        className="text-red-400/60 hover:text-red-400 transition"
                                     >
-                                        🗑️
+                                        ✕
                                     </button>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className="bg-[#1E293B] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-yellow-400/20 min-h-[200px] sm:min-h-[250px]">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:mb-3">
-                            <h2 className="text-lg sm:text-2xl font-bold text-yellow-400">
+                    <div className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] rounded-2xl p-6 sm:p-7 border-2 border-yellow-400/40 min-h-[250px] hover:border-yellow-400/60 transition duration-300 shadow-lg shadow-yellow-400/10">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:mb-4">
+                            <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-yellow-400 to-yellow-300 bg-clip-text text-transparent">
                                 Schedule
                             </h2>
                             <button
@@ -149,33 +149,33 @@ function Priority() {
                                     setSelectedQuadrant("schedule");
                                     setIsOpen(true);
                                 }}
-                                className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-yellow-400/20 text-yellow-400 rounded-lg hover:bg-yellow-400/30 transition w-fit">
-                                +Add
+                                className="px-3 sm:px-4 py-1.5 text-xs sm:text-sm bg-yellow-400/20 text-yellow-400 rounded-lg hover:bg-yellow-400/30 transition font-semibold w-fit">
+                                + Add
                             </button>
                         </div>
-                        <div className="mt-3 sm:mt-4 space-y-2">
+                        <div className="mt-4 sm:mt-6 space-y-2">
                             {scheduleTasks.map((task) => (
                                 <div
                                     key={task.id}
-                                    className="bg-[#0F172A] p-2 sm:p-3 rounded-lg flex justify-between items-center text-sm sm:text-base"
+                                    className="bg-[#0F172A] p-3 sm:p-4 rounded-lg flex justify-between items-center text-sm sm:text-base border border-yellow-400/20 hover:border-yellow-400/40 transition duration-200 group"
                                 >
-                                    <span>{task.text}</span>
+                                    <span className="text-[#E5E7EB] group-hover:text-yellow-300 transition">{task.text}</span>
 
                                     <button
                                         onClick={() =>
                                             deleteTask("schedule", task.id)
                                         }
-                                        className="text-red-400"
+                                        className="text-red-400/60 hover:text-red-400 transition"
                                     >
-                                        🗑️
+                                        ✕
                                     </button>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className="bg-[#1E293B] rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-blue-400/20 min-h-[200px] sm:min-h-[250px]">
-                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 sm:mb-3">
-                            <h2 className="text-lg sm:text-2xl font-bold text-blue-400">
+                    <div className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] rounded-2xl p-6 sm:p-7 border-2 border-blue-400/40 min-h-[250px] hover:border-blue-400/60 transition duration-300 shadow-lg shadow-blue-400/10">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:mb-4">
+                            <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-300 bg-clip-text text-transparent">
                                 Delegate
                             </h2>
                             <button
@@ -183,33 +183,33 @@ function Priority() {
                                     setSelectedQuadrant("delegate");
                                     setIsOpen(true);
                                 }}
-                                className="px-2 sm:px-3 py-1 text-xs sm:text-sm bg-blue-400/20 text-blue-400 rounded-lg hover:bg-blue-400/30 transition w-fit">
-                                +Add
+                                className="px-3 sm:px-4 py-1.5 text-xs sm:text-sm bg-blue-400/20 text-blue-400 rounded-lg hover:bg-blue-400/30 transition font-semibold w-fit">
+                                + Add
                             </button>
                         </div>
-                        <div className="mt-3 sm:mt-4 space-y-2">
+                        <div className="mt-4 sm:mt-6 space-y-2">
                             {delegateTasks.map((task) => (
                                 <div
                                     key={task.id}
-                                    className="bg-[#0F172A] p-2 sm:p-3 rounded-lg flex justify-between items-center text-sm sm:text-base"
+                                    className="bg-[#0F172A] p-3 sm:p-4 rounded-lg flex justify-between items-center text-sm sm:text-base border border-blue-400/20 hover:border-blue-400/40 transition duration-200 group"
                                 >
-                                    <span>{task.text}</span>
+                                    <span className="text-[#E5E7EB] group-hover:text-blue-300 transition">{task.text}</span>
 
                                     <button
                                         onClick={() =>
                                             deleteTask("delegate", task.id)
                                         }
-                                        className="text-red-400"
+                                        className="text-blue-400/60 hover:text-blue-400 transition"
                                     >
-                                        🗑️
+                                        ✕
                                     </button>
                                 </div>
                             ))}
                         </div>
                     </div>
-                    <div className="bg-[#1E293B] rounded-2xl p-6 border border-gray-400/20 min-h-[250px]">
-                        <div className="flex items-center justify-between mb-3">
-                            <h2 className="text-2xl font-bold text-gray-400  mb-3">
+                    <div className="bg-gradient-to-br from-[#1E293B] to-[#0F172A] rounded-2xl p-6 sm:p-7 border-2 border-gray-400/40 min-h-[250px] hover:border-gray-400/60 transition duration-300 shadow-lg shadow-gray-400/10">
+                        <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:mb-4">
+                            <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-gray-400 to-gray-300 bg-clip-text text-transparent">
                                 Eliminate
                             </h2>
                             <button
@@ -217,25 +217,25 @@ function Priority() {
                                     setSelectedQuadrant("eliminate");
                                     setIsOpen(true);
                                 }}
-                                className="px-3 py-1 text-sm bg-gray-400/20 text-gray-400 rounded-lg hover:bg-gray-400/30 transition">
-                                +Add
+                                className="px-3 sm:px-4 py-1.5 text-xs sm:text-sm bg-gray-400/20 text-gray-400 rounded-lg hover:bg-gray-400/30 transition font-semibold w-fit">
+                                + Add
                             </button>
                         </div>
-                        <div className="mt-4 space-y-2">
+                        <div className="mt-4 sm:mt-6 space-y-2">
                             {eliminateTasks.map((task) => (
                                 <div
                                     key={task.id}
-                                    className="bg-[#0F172A] p-3 rounded-lg flex justify-between items-center"
+                                    className="bg-[#0F172A] p-3 sm:p-4 rounded-lg flex justify-between items-center text-sm sm:text-base border border-gray-400/20 hover:border-gray-400/40 transition duration-200 group"
                                 >
-                                    <span>{task.text}</span>
+                                    <span className="text-[#E5E7EB] group-hover:text-gray-300 transition">{task.text}</span>
 
                                     <button
                                         onClick={() =>
                                             deleteTask("eliminate", task.id)
                                         }
-                                        className="text-red-400"
+                                        className="text-gray-400/60 hover:text-gray-400 transition"
                                     >
-                                        🗑️
+                                        ✕
                                     </button>
                                 </div>
                             ))}

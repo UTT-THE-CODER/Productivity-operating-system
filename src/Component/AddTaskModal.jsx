@@ -23,20 +23,20 @@ function AddTaskModal({ isOpen, setIsOpen, addTask }) {
 
     if (!isOpen) return null
     return (
-        <div className="fixed inset-0 bg-black/60 backdrop-blur-md flex items-center justify-center z-50 transition duration-300 p-4">
-            <div className="w-full max-w-md bg-linear-to-br from-[#1E293B] to-[#0F172A] border border-[#5BC0BE]/20 rounded-xl sm:rounded-2xl p-6 sm:p-8 shadow-2xl shadow-[#5BC0BE]/20 transition duration-300">
+        <div className="fixed inset-0 bg-black/70 backdrop-blur-sm flex items-center justify-center z-50 transition duration-300 p-4 animate-fadeIn">
+            <div className="w-full max-w-md bg-gradient-to-br from-[#1E293B] to-[#0F172A] border border-[#5BC0BE]/40 rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-2xl shadow-[#5BC0BE]/40 transition duration-300">
                 <div className="flex items-center justify-between mb-6 sm:mb-8">
-                    <h2 className="text-xl sm:text-3xl font-bold text-[#5BC0BE]">
+                    <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] bg-clip-text text-transparent">
                         Add New Task
                     </h2>
                     <button
                         onClick={() => setIsOpen(false)}
-                        className="text-[#94A3B8] hover:text-[#E7D8C9] text-lg sm:text-2xl transition duration-300 hover:scale-110"
+                        className="text-[#5BC0BE] hover:text-[#E5E7EB] text-2xl sm:text-3xl transition duration-300 hover:scale-125"
                     >
                         ✕
                     </button>
                 </div>
-                <div className="flex flex-col gap-4 sm:gap-5">
+                <div className="flex flex-col gap-4 sm:gap-6">
                     <input
                         type="text"
                         placeholder="Enter task..."
@@ -44,16 +44,16 @@ function AddTaskModal({ isOpen, setIsOpen, addTask }) {
                         onChange ={
                             (e) => setTaskText(e.target.value)
                         }
-                        className="w-full border border-[#5BC0BE]/20 rounded-lg px-4 sm:px-5 py-2 sm:py-3 text-sm sm:text-base bg-[#1E293B]/50 text-[#E5E7EB] outline-none transition duration-300 focus:border-[#5BC0BE] focus:bg-[#1E293B]/70 focus:shadow-[#5BC0BE]/20 focus:shadow-lg"
+                        className="w-full border-2 border-[#5BC0BE]/30 rounded-lg px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base bg-[#0F172A] text-[#E5E7EB] placeholder-[#5BC0BE]/40 outline-none transition duration-300 focus:border-[#5BC0BE] focus:bg-[#0F172A]/50 focus:shadow-lg focus:shadow-[#5BC0BE]/20 font-medium"
                     />
                     <input
                         type="time"
                         value={taskTime}
                         onChange={(e) => setTaskTime(e.target.value)}
-                        className="w-full border border-[#5BC0BE]/20 rounded-lg px-4 sm:px-5 py-2 sm:py-3 text-sm sm:text-base bg-[#1E293B]/50 text-[#E5E7EB] outline-none transition duration-300 focus:border-[#5BC0BE] focus:bg-[#1E293B]/70 focus:shadow-[#5BC0BE]/20 focus:shadow-lg"
+                        className="w-full border-2 border-[#5BC0BE]/30 rounded-lg px-4 sm:px-5 py-3 sm:py-4 text-sm sm:text-base bg-[#0F172A] text-[#E5E7EB] outline-none transition duration-300 focus:border-[#5BC0BE] focus:bg-[#0F172A]/50 focus:shadow-lg focus:shadow-[#5BC0BE]/20 font-medium"
                     />
                     <button onClick = {handleAddTask} 
-                    className="bg-[#5BC0BE] text-[#0F172A] py-2 sm:py-3 text-sm sm:text-base rounded-lg font-bold hover:shadow-lg hover:shadow-[#5BC0BE]/40 hover:scale-105 transition duration-300">
+                    className="bg-gradient-to-r from-[#5BC0BE] to-[#06B6D4] text-[#0F172A] py-3 sm:py-4 text-sm sm:text-base rounded-lg font-bold shadow-lg shadow-[#5BC0BE]/40 hover:shadow-xl hover:shadow-[#5BC0BE]/60 hover:scale-105 transition duration-300">
                         Add Task
                     </button>
                 </div>
