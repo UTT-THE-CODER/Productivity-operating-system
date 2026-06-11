@@ -6,6 +6,7 @@ import Pomodoro from "./Pages/Pomodoro";
 import Navbar from "./Component/Navbar";
 import Priority from "./Pages/Priority";
 import StudyWithMe from "./Pages/StudyWithMe";
+import TeamTodo from "./Pages/TeamTodo";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Route path="/Pomodoro" element={<Pomodoro />} />
         <Route path="/Priority" element={<Priority />}/>
         <Route path ="/StudyWithMe" element={<StudyWithMe />}/>
+        <Route path = "/TeamTodo" element={<TeamTodo />}/>
       </Routes>
 
     </BrowserRouter>
