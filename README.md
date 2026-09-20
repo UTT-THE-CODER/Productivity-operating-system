@@ -90,7 +90,6 @@ src
 
 ## 📸 Screenshots
 
-(Add screenshots here)
 
 ---
 
